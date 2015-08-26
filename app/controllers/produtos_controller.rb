@@ -7,7 +7,7 @@ class ProdutosController < ApplicationController
 
 	def create
 		## O método require faz a solicitção do produto.
-		valores = params.require(:produto).permit!
+		valores = params.require(:produto).permit :nome, :descricao, :quantidade, :preco
 		Produto.create valores
 	end
 end
