@@ -4,7 +4,8 @@
             <th>Nome</th>
             <th>Descrição</th>
             <th>Preço</th>
-            <th>Quantidade</th>            
+            <th>Quantidade</th>
+            <th></th>        
         </tr>
     </thead>
     <tbody>
@@ -14,6 +15,7 @@
             <td> <%= produto.descricao %> </%> </td>
             <td> <%= produto.preco %> </%> </td>
             <td> <%= produto.quantidade %> </%> </td>
+            <td> <a href="/produtos/<%= produto.id %>/delete">Remover</a> </td>
         </tr>
         <% end %>
     </tbody>

@@ -9,5 +9,13 @@ class ProdutosController < ApplicationController
 		## O método require faz a solicitção do produto.
 		valores = params.require(:produto).permit :nome, :descricao, :quantidade, :preco
 		Produto.create valores
+		redirect_to root_url
 	end
+
+	def destroy
+		id = params[:id]
+		Produto.destroy id
+		redirect_to root_url
+	end
+
 end
