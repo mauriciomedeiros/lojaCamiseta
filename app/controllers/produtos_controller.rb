@@ -5,6 +5,11 @@ class ProdutosController < ApplicationController
 		@produtos_order_preco = Produto.order(:preco).limit 2
 	end
 
+	def busca
+		@nome_da_busca = params[:nome]
+		@produtos = Produto.where "nome like ?", "%#{@nome_da_busca}%"
+	end
+
 	def create
 		## O método require faz a solicitção do produto.
 		valores = params.require(:produto).permit :nome, :descricao, :quantidade, :preco

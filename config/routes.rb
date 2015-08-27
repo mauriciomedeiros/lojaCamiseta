@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   ## delete "produtos/:id" => "produtos#destroy", as: :produto
   ## todos os comentados vão ser criados pelo resources
   resources :produtos, only: [:new, :create, :destroy]
+  get "/produtos/busca" => "produtos#busca", as: :busca_produto
 end
